@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.joe.coinproject.addCoin"
+    tools:showIn="@layout/activity_add_coin">
+
+    <EditText
+        android:id="@+id/country"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Country" />
+
+    <EditText
+        android:id="@+id/serialNum"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Serial Number" />
+
+    <EditText
+        android:id="@+id/denom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Denomination" />
+
+    <EditText
+        android:id="@+id/year"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:hint="Enter year" />
+
+    <EditText
+        android:id="@+id/material"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter material" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="numberDecimal"
+        android:hint="Enter Price" />
+
+    <EditText
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Image URL" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="addCoin"
+        android:text="Add Coin" />
+
+</LinearLayout>

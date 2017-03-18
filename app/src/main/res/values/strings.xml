@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Coin Project</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_coin">addCoin</string>
+    <string name="title_activity_remove_coin">removeCoin</string>
+    <string name="title_activity_display_coin">DisplayCoin</string>
+    <string name="title_activity_load_list">LoadList</string>
+    <string name="title_activity_save_list">SaveList</string>
+</resources>

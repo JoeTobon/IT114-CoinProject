@@ -1,0 +1,61 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.joe.coinproject.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/opt1"
+        android:onClick="onOption1"
+        android:showAsAction="ifRoom|withText"
+        android:title="1. Show Coin List"/>
+    <item
+        android:id="@+id/opt2"
+        android:onClick="onOption2"
+        android:showAsAction="ifRoom|withText"
+        android:title="2. Show Coin List in Reverse Order"/>
+    <item
+        android:id="@+id/opt3"
+        android:onClick="onOption3"
+        android:showAsAction="ifRoom|withText"
+        android:title="3. Add a Coin to List"/>
+    <item
+        android:id="@+id/opt4"
+        android:onClick="onOption4"
+        android:showAsAction="ifRoom|withText"
+        android:title="4. Show a Specific Coin"/>
+    <item
+        android:id="@+id/opt5"
+        android:onClick="onOption5"
+        android:showAsAction="ifRoom|withText"
+        android:title="5. Sell a Coin From List"/>
+    <item
+        android:id="@+id/opt6"
+        android:onClick="onOption6"
+        android:showAsAction="ifRoom|withText"
+        android:title="6. Show Total Number of Gold Coins"/>
+    <item
+        android:id="@+id/opt7"
+        android:onClick="onOption7"
+        android:showAsAction="ifRoom|withText"
+        android:title="7. Show Total Price of All Coins"/>
+    <item
+        android:id="@+id/opt8"
+        android:onClick="onOption8"
+        android:showAsAction="ifRoom|withText"
+        android:title="8. Show Average Age of All Coins"/>
+    <item
+        android:id="@+id/opt9"
+        android:onClick="onOption9"
+        android:showAsAction="ifRoom|withText"
+        android:title="9. Load List From File"/>
+    <item
+        android:id="@+id/opt10"
+        android:onClick="onOption10"
+        android:showAsAction="ifRoom|withText"
+        android:title="10. Save List to File"/>
+</menu>
