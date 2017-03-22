@@ -30,6 +30,7 @@ public class addCoin extends AppCompatActivity {
 
     public void addCoin(View view)
     {
+        //Declares and initializes EditText objects
         EditText etC = (EditText) findViewById(R.id.country);
         EditText etS = (EditText) findViewById(R.id.serialNum);
         EditText etD = (EditText) findViewById(R.id.denom);
@@ -38,6 +39,7 @@ public class addCoin extends AppCompatActivity {
         EditText etP = (EditText) findViewById(R.id.price);
         EditText etI = (EditText) findViewById(R.id.image);
 
+        //Get values entered
         String country = etC.getText().toString();
         String serialN = etS.getText().toString();
         String denom = etD.getText().toString();
@@ -49,6 +51,7 @@ public class addCoin extends AppCompatActivity {
         Coin tempC = new Coin(country, serialN, denom, year, material, price, imageUrl);
         CoinList cList = CoinList.getInstance();
 
+        //Adss coins to end of list
         cList.add(tempC);
 
         Toast.makeText(addCoin.this, "Coin added to the list", Toast.LENGTH_SHORT).show();

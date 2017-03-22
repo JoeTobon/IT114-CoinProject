@@ -16,6 +16,7 @@ public class Coin
     private double price;
     private String imageUrl;
 
+    //default constructor
     public Coin()
     {
         this.country = "";
@@ -27,6 +28,7 @@ public class Coin
         this.imageUrl = "";
     }
 
+    //constructor
     public Coin(String country, String serialNum, String denom, int year, String material, double price, String imageUrl)
     {
         this.country = country;

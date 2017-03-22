@@ -35,6 +35,7 @@ public class removeCoin extends AppCompatActivity {
         String serialNum = et1.getText().toString();
         boolean found = false;
 
+        //Removes coin from list if serial number found
         for(int i = 0; i < cList.size(); i++)
         {
             if(cList.get(i).getSerialNum().equals(serialNum))
@@ -45,6 +46,7 @@ public class removeCoin extends AppCompatActivity {
             }
         }
 
+        //Displays a message depending on whether coin is removed of not
         if(found == true)
         {
             Toast.makeText(removeCoin.this, "Removed item from list", Toast.LENGTH_SHORT).show();

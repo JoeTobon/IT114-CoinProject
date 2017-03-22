@@ -44,6 +44,7 @@ public class SaveList extends AppCompatActivity {
         BufferedWriter bw = new BufferedWriter(fw);
         PrintWriter pw = new PrintWriter(bw);
 
+        //Saves data of all coins to file whose name is given by user
         for(int i = 0; i < cList.size(); i++)
         {
             pw.write(cList.get(i).getCountry() + "\n");

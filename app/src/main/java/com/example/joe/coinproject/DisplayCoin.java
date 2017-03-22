@@ -44,6 +44,7 @@ public class DisplayCoin extends AppCompatActivity {
 
         tv.setText("");
 
+        //Searches list for coin with entered serial number
         for(int i = 0; i < cList.size(); i++)
         {
             if(cList.get(i).getSerialNum().equals(serialNum))
@@ -54,6 +55,7 @@ public class DisplayCoin extends AppCompatActivity {
             }
         }
 
+        //Displays output depending on whether or not coin was found
         if(found == false)
         {
             Toast.makeText(DisplayCoin.this, "Coin not found", Toast.LENGTH_SHORT).show();
@@ -66,6 +68,7 @@ public class DisplayCoin extends AppCompatActivity {
             tv.append("Material: " + temp.getMaterial() + "\n");
             tv.append("Price: " + String.valueOf(temp.getPrice()) + "\n");
 
+            //Displays coin age depending on age (0 or not)
             if(temp.getAge() == 0)
             {
                 tv.append("Age: newly minted" + "\n");
@@ -77,8 +80,8 @@ public class DisplayCoin extends AppCompatActivity {
 
             image_url = temp.getImageUrl();
 
-            //use Fresco to download and display the image in the Drawee
-            Uri uri = Uri.parse(image_url);  // image_url is a string
+            //uses Fresco to download and display the image in the Drawee
+            Uri uri = Uri.parse(image_url);
             SimpleDraweeView draweeView = (SimpleDraweeView) findViewById(R.id.image_area);
             draweeView.setImageURI(uri);
         }

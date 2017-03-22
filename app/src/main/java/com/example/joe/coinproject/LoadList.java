@@ -41,12 +41,11 @@ public class LoadList extends AppCompatActivity {
         boolean problem = false;
         Scanner fsc = null;
 
+        //Tests for file existence
         try
         {
             URL file_url = new URL(et1.getText().toString());
             fsc = new Scanner(file_url.openStream());
-
-
         }
         catch(IOException e)
         {
@@ -56,8 +55,10 @@ public class LoadList extends AppCompatActivity {
 
         if(problem == false)
         {
+            //Clears list so loaded list replaces every item
             cList.removeAll(cList);
 
+            //Loads list with coin objects from url
             while(fsc.hasNext())
             {
                 String country = fsc.nextLine();

@@ -1,3 +1,23 @@
+//////////////////////////////////////////////////////////////////////
+//                                                                  //
+//          Joseph Tobon                                            //
+//          IT114, Section 004                                      //
+//          Dr. Halper                                              //
+//          App Project #1                                          //
+//          Mar. 28, 2017                                           //
+//          This app is designed to help manage a                   //
+//          list of coins for sale by a coin dealer                 //
+//                                                                  //
+//          Option 7: Gets total price of all coins. This is        //
+//          meaningful to a coin dealer as they can see the total   //
+//          value of collection instantly.                          //
+//                                                                  //
+//          Option 8: Gets average age of every coin. This is       //
+//          meaningful as coin dealer can gage the value            //
+//          of individual coins even further.                       //
+//                                                                  //
+//////////////////////////////////////////////////////////////////////
+
 package com.example.joe.coinproject;
 
 import android.content.Intent;
@@ -71,78 +91,67 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //Displays the list of coins forward
     public void onOption1(MenuItem i)
     {
-        // show the list in order
-
         int j;
         String temp = "";
         CoinList cList;
 
         tv.setText("");
 
-        // get the list
-
+        //get the list
         cList = CoinList.getInstance();
 
-        // display the list items
-
+        //display the list items
         for(j = 0; j < cList.size(); j++)
         {
             temp = cList.get(j).getCountry() + ", " + cList.get(j).getSerialNum() + ", " + cList.get(j).getDenom() + ", " + cList.get(j).getYear();
             tv.append(temp + '\n');
         }
-    } // end onOption1
+    }
 
+    //Displays the list of coins backward
     public void onOption2(MenuItem i)
     {
-        //show the list in reverse order
         String temp = "";
-
+        CoinList cList = CoinList.getInstance();
         tv.setText("");
 
-        CoinList cList = CoinList.getInstance();
-
+        //display list items in reverse order
         for(int k = (cList.size()-1); k >= 0; k--)
         {
             temp = cList.get(k).getCountry() + ", " + cList.get(k).getSerialNum() + ", " + cList.get(k).getDenom() + ", " + cList.get(k).getYear();
             tv.append(temp + '\n');
         }
+    }
 
-
-    } // end onOption2
-
+    //Adds a new coin to the list
     public void onOption3(MenuItem i)
     {
-        // Start the activity to add a new item to the list
-
         startActivity(new Intent(this, addCoin.class));
+    }
 
-    } // end onOption3
-
+    //Shows details of a coin
     public void onOption4(MenuItem i)
     {
-        // Start the activity to add a new item to the list
-
         startActivity(new Intent(this, DisplayCoin.class));
+    }
 
-    } // end onOption4
-
-
+    //Deletes (sells) a coin
     public void onOption5(MenuItem i)
     {
-        // Start the activity to add a new item to the list
-
         startActivity(new Intent(this, removeCoin.class));
+    }
 
-    } // end onOption5
-
+    //Shows number of gold coins
     public void onOption6(MenuItem i)
     {
         CoinList cList = CoinList.getInstance();
         int goldCount = 0;
         tv.setText("");
 
+        //Finds number of gold coins in list
         for(int ind = 0; ind < cList.size(); ind++)
         {
             if(cList.get(ind).getMaterial().equals("gold"))
@@ -152,8 +161,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         tv.append(String.valueOf(goldCount) + " gold coin(s)");
-    } // end onOption6
+    }
 
+    //Gets total price of all coins
     public void onOption7(MenuItem i)
     {
         CoinList cList = CoinList.getInstance();
@@ -168,26 +178,28 @@ public class MainActivity extends AppCompatActivity {
 
         tv.append("Number of Coins: " + String.valueOf(coinNum) + "\n");
         tv.append("Total Price of Coins: " + String.valueOf(total));
-    } // end onOption7
+    }
 
+    //Gets average age of every coin
     public void onOption8(MenuItem i)
     {
         CoinList cList = CoinList.getInstance();
         DecimalFormat form = new DecimalFormat("0.00");
         int coinNum = cList.size();
         double totalAge = 0;
-        double avgAge = 0.0;
+        double avgAge;
         tv.setText("");
 
+        //Gets total age of all coins for averaging purposes
         for(int in = 0; in < coinNum; in++)
         {
             totalAge += cList.get(in).getAge();
         }
 
         avgAge = totalAge/coinNum;
-
         tv.append("Number of Coins: " + String.valueOf(coinNum) + "\n");
 
+        //Custom text view depending on number of coins
         if(coinNum == 0)
         {
             tv.append("Average Age of All Coins: " + String.valueOf(0) + " years");
@@ -196,21 +208,17 @@ public class MainActivity extends AppCompatActivity {
         {
             tv.append("Average Age of All Coins: " + String.valueOf(form.format(avgAge)) + " years");
         }
-    } // end option8
+    }
 
+    //Loads list from file
     public void onOption9(MenuItem i)
     {
-        // Start the activity to add a new item to the list
-
         startActivity(new Intent(this, LoadList.class));
+    }
 
-    } // end onOption9
-
+    //Saves list to file
     public void onOption10(MenuItem i)
     {
-        // Start the activity to add a new item to the list
-
         startActivity(new Intent(this, SaveList.class));
-
-    } // end onOption10
+    }
 }

@@ -17,7 +17,7 @@
         android:id="@+id/opt2"
         android:onClick="onOption2"
         android:showAsAction="ifRoom|withText"
-        android:title="2. Show Coin List in Reverse Order"/>
+        android:title="2. Show Coin List in Reverse"/>
     <item
         android:id="@+id/opt3"
         android:onClick="onOption3"
@@ -37,12 +37,12 @@
         android:id="@+id/opt6"
         android:onClick="onOption6"
         android:showAsAction="ifRoom|withText"
-        android:title="6. Show Total Number of Gold Coins"/>
+        android:title="6. Show Number of Gold Coins"/>
     <item
         android:id="@+id/opt7"
         android:onClick="onOption7"
         android:showAsAction="ifRoom|withText"
-        android:title="7. Show Total Price of All Coins"/>
+        android:title="7. Show Price of All Coins"/>
     <item
         android:id="@+id/opt8"
         android:onClick="onOption8"
